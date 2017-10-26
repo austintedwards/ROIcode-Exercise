@@ -66,7 +66,8 @@ export class Input extends Component {
       return word1+ " " + word2
     })
     newSentence = newSentence.charAt(0).toUpperCase()+newSentence.slice(1)
-    console.log(newSentence)
+    alert(newSentence);
+
   }
 
   render() {
