@@ -62,9 +62,11 @@ export class Input extends Component {
       }
       return word
     })
-    console.log(arrInflat)
-    // console.log(arrInflat)
-
+    let newSentence = arrInflat.reduce((word1,word2)=>{
+      return word1+ " " + word2
+    })
+    newSentence = newSentence.charAt(0).toUpperCase()+newSentence.slice(1)
+    console.log(newSentence)
   }
 
   render() {
