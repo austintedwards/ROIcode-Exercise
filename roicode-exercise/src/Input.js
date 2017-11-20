@@ -23,51 +23,18 @@ export class Input extends Component {
   }
 
   inflationary(sentence){
-    let arr = sentence.toLowerCase().split(" ")
-    let arrInflat = arr.map(word=>{
-      if(word.includes("ten")){
-        return word.replace('ten', 'eleven')
-      }else if(word.includes("nine")){
-        return word.replace('nine', 'ten')
-      }else if(word.includes("nign")){
-        return word.replace('nign', 'ten')
-      }else if(word.includes("eight")){
-        return word.replace('eight', 'nine')
-      }else if(word.includes("ate")){
-        return word.replace('ate', 'nine')
-      }else if(word.includes("seven")){
-        return word.replace('seven', 'eight')
-      }else if(word.includes("six")){
-        return word.replace('six', 'seven')
-      }else if(word.includes("five")){
-        return word.replace('five', 'six')
-      }else if(word.includes("four")){
-        return word.replace('four', 'five')
-      }else if(word.includes("fore")){
-        return word.replace('fore', 'five')
-      }else if(word.includes("for")){
-        return word.replace('for', 'five')
-      }else if(word.includes("three")){
-        return word.replace('three', 'four')
-      }else if(word.includes("two")){
-        return word.replace('two', 'three')
-      }else if(word.includes("too")){
-        return word.replace('too', 'three')
-      }else if(word.includes("to")){
-        return word.replace('to', 'three')
-      }else if(word.includes("one")){
-        return word.replace('one', 'two')
-      }else if(word.includes("won")){
-        return word.replace('won', 'two')
-      }
-      return word
-    })
-    let newSentence = arrInflat.reduce((word1,word2)=>{
-      return word1+ " " + word2
-    })
-    newSentence = newSentence.charAt(0).toUpperCase()+newSentence.slice(1)
+    let sentence1 = sentence.replace(/ten/i, 'eleven')
+    let sentence2 = sentence1.replace(/nine|nign/i, 'ten')
+    let sentence3 = sentence2.replace(/eight|ate/i, 'nine')
+    let sentence4 = sentence3.replace(/seven/i, 'eight')
+    let sentence5 = sentence4.replace(/six/i, 'seven')
+    let sentence6 = sentence5.replace(/five/i, 'six')
+    let sentence7 = sentence6.replace(/four|fore|for/i, 'five')
+    let sentence8 = sentence7.replace(/three/i, 'four')
+    let sentence9 = sentence8.replace(/two|too|to/i, 'three')
+    let newSentence = sentence9.replace(/one|won/i, 'two')
+    console.log(newSentence)
     alert(newSentence);
-
   }
 
   render() {
